@@ -1,4 +1,4 @@
-# Advanced JavaScript Editor with MusicBlocks Interactions
+# Advanced MusicBlocks JavaScript Editor and MIDI Generation Tool
 
 This is a comprehensive summary of my work on the **Advanced JavaScript Editor with MusicBlocks Interactions** project during *Google Summer of Code 2025* with [Sugar Labs](https://github.com/sugarlabs/). This project focused on enhancing the JavaScript editor within the MusicBlocks environment to provide a seamless bridge between visual block-based programming and textual JavaScript coding.
 
@@ -145,6 +145,76 @@ The JSON-based configuration system enables:
 - **Documentation**: Self-documenting block definitions
 - **Testing**: Automated validation of configurations
 
+## MusicBlocks Generation Model
+
+In addition to the JavaScript Editor project, I developed a **MusicBlocks Generation Model** that creates an end-to-end pipeline for generating music from natural language prompts. This project addresses the challenge of helping users create music when they don't know how to program, by providing an AI-powered generation system that outputs directly to MusicBlocks format.
+
+### Project Overview
+
+The MusicBlocks Generation Model uses Retrieval-Augmented Generation (RAG) to create music based on user queries like "guitar solo with similar style to hotel california" or "jazz piano piece". The system generates MIDI files that are then automatically converted to MusicBlocks projects, creating a complete workflow from natural language input to visual programming blocks.
+
+### Core Components
+
+#### 1. RAG Pipeline for Music Generation
+
+**Data Collection & Processing:**
+- **MIDI Dataset**: Collected and cleaned a comprehensive dataset of MIDI files
+- **Metadata Extraction**: Extracted artist names, song titles, musical styles, BPM, and other musical characteristics
+- **Vector Embedding**: Used Gemini embedding model to create vector representations of MIDI data and metadata
+- **Similarity Search**: Implemented retrieval system that finds musically similar pieces based on user queries
+
+**Generation Process:**
+- **Query Processing**: User inputs natural language description of desired music
+- **Retrieval**: System finds similar musical pieces from the dataset
+- **AI Generation**: Uses Gemini API with carefully engineered prompts to generate new MIDI files
+- **Style Preservation**: Maintains musical characteristics and style of requested music
+
+#### 2. MIDI Upload Widget
+
+**Core Functionality:**
+- **File Upload**: Allows users to upload any MIDI file for conversion to MusicBlocks
+- **Automatic Conversion**: Converts uploaded MIDI files to MusicBlocks visual blocks
+- **Direct Generation**: Integrated with RAG pipeline for prompt-based music generation
+- **Seamless Integration**: Bridges the gap between AI-generated music and MusicBlocks format
+
+**User Experience:**
+- **Simple Interface**: Intuitive widget design suitable for young learners
+- **Multiple Input Methods**: Support for both file uploads and text prompts
+- **Real-time Conversion**: Immediate visual feedback during the conversion process
+
+### Technical Architecture
+
+**RAG System Components:**
+- **Vector Database**: Stores embeddings of MIDI files and metadata for efficient retrieval
+- **Embedding Model**: Gemini-based embeddings for improved accuracy
+- **Generation Model**: Gemini API integration for high-quality MIDI generation
+- **Prompt Engineering**: Carefully crafted prompts for consistent musical output
+
+**Integration Points:**
+- **MIDI Processing**: Handles various MIDI file formats and characteristics
+- **MusicBlocks Conversion**: Automatic conversion from MIDI to visual blocks
+- **Error Handling**: Robust error handling for corrupted or malformed files
+
+### Key Achievements
+
+**Week 8-10 Progress:**
+- **Week 8**: Built complete RAG pipeline with MIDI dataset and vector embeddings
+- **Week 9**: Integrated Gemini embedding model and created MIDI upload widget
+- **Week 10**: Connected RAG pipeline with MIDI widget for end-to-end generation
+
+**Quality Improvements:**
+- **Enhanced Retrieval**: Gemini embeddings significantly improved similarity search accuracy
+- **Better Generation**: Improved prompt engineering and model selection for higher quality MIDI output
+- **Complete Workflow**: Successfully demonstrated end-to-end generation from prompt to MusicBlocks
+
+### Educational Impact
+
+The MusicBlocks Generation Model serves as a powerful educational tool by:
+- **Lowering Barriers**: Enables music creation without programming knowledge
+- **Inspiration**: Provides starting points for learners to modify and experiment
+- **Learning Pathway**: Helps users understand how musical concepts translate to visual blocks
+- **Creativity**: Encourages exploration of different musical styles and genres
+
 ## Challenges and Solutions
 
 ### Major Technical Challenges
@@ -157,6 +227,10 @@ The JSON-based configuration system enables:
    - **Challenge**: JavaScript constructs don't map directly to block structures
    - **Solution**: Created flexible pattern matching with configurable AST traversal
 
+3. **Music Generation Quality**
+   - **Challenge**: Initial MIDI generation had quality and tempo issues
+   - **Solution**: Improved prompt engineering and model selection, with ongoing tempo optimization
+
 4. **User Experience Design**
    - **Challenge**: Creating intuitive tools for young learners
    - **Solution**: Focused on discoverable, simple interactions with powerful underlying functionality
@@ -165,6 +239,4 @@ The JSON-based configuration system enables:
 
 The Advanced JavaScript Editor with MusicBlocks Interactions project successfully bridges the gap between visual block-based programming and textual JavaScript coding. By providing bidirectional conversion, comprehensive debugging tools, and enhanced editor features, the project creates a complete learning environment that empowers young programmers to develop both visual and textual programming skills.
 
-The config-driven architecture ensures the system can grow with educational needs, while the focus on user experience makes powerful programming tools accessible to learners of all ages. The project demonstrates how thoughtful technical design can create educational tools that are both powerful and accessible, ultimately helping children develop the problem-solving skills they need for the digital age.
-
-This work represents a significant contribution to educational technology, providing a pathway for learners to transition from visual programming to text-based coding while maintaining the engaging, music-focused learning environment that makes MusicBlocks special.
+The MusicBlocks Generation Model adds another dimension to this educational ecosystem by enabling AI-powered music creation that directly integrates with the visual programming environment. This creates a comprehensive platform where users can learn programming through music creation, whether starting with visual blocks, JavaScript code, or natural language descriptions.
