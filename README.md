@@ -6,7 +6,9 @@ This is a comprehensive summary of my work on the **Advanced JavaScript Editor w
 
 [*Music Blocks*](https://musicblocks.sugarlabs.org/) is a block-based programming environment that teaches beginners how to program through the creation of music. While the existing system excelled at visual (block-based) programming, there was a significant gap in helping learners transition to text-based coding. The purpose of my project was **to develop an advanced JavaScript editor that enables bidirectional conversion between JavaScript code and MusicBlocks visual blocks, along with comprehensive debugging tools and syntax highlighting to create a complete learning environment**.
 
-This project addressed a critical educational need: children cannot learn to code without actually coding. Although MusicBlocks provided excellent visual programming concepts, learners needed a pathway to text-based programming. The JavaScript-to-MusicBlocks conversion feature enables smooth transitions between visual and textual programming, promoting deeper understanding of programming concepts.
+Additionally, I developed a **MusicBlocks Generation Model** that creates an end-to-end pipeline for generating music from natural language prompts using AI-powered retrieval-augmented generation (RAG). This system addresses the challenge of helping users create music when they don't know how to program, by providing an AI-powered generation system that outputs directly to MusicBlocks format.
+
+This project addressed a critical educational need: children cannot learn to code without actually coding. Although MusicBlocks provided excellent visual programming concepts, learners needed a pathway to text-based programming. The JavaScript-to-MusicBlocks conversion feature enables smooth transitions between visual and textual programming, promoting deeper understanding of programming concepts. The generation model further lowers barriers by enabling music creation through natural language, creating multiple entry points for learners.
 
 ## Tech Stack
 
@@ -15,10 +17,17 @@ For code parsing and analysis, I integrated:
 - **[Highlight.js](https://github.com/highlightjs/highlight.js/)** for syntax highlighting
 - **Custom AST traversal** algorithms for code-to-block conversion
 
+For the MusicBlocks Generation Model, I implemented:
+- **[Google Gemini API](https://ai.google.dev/)** for AI-powered music generation and embeddings
+- **[FAISS](https://github.com/facebookresearch/faiss)** for efficient vector similarity search
+- **Vector embeddings** for MIDI file and metadata representation
+- **MIDI processing** libraries for file manipulation and conversion
+
 The project also required updating the existing MusicBlocks architecture, including:
 - Block generation and manipulation
 - Program execution logic
 - UI/UX components for the editor interface
+- MIDI-to-MusicBlocks conversion pipeline
 
 ## Core Project Features
 
