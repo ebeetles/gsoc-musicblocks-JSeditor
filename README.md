@@ -162,6 +162,9 @@ In addition to the JavaScript Editor project, I developed a **MusicBlocks Genera
 
 The MusicBlocks Generation Model uses Retrieval-Augmented Generation (RAG) to create music based on user queries like "guitar solo with similar style to hotel california" or "jazz piano piece". The system generates MIDI files that are then automatically converted to MusicBlocks projects, creating a complete workflow from natural language input to visual programming blocks.
 
+A walkthrough is shown below:
+[youtube: 5Ha7WlbHOfc]
+
 ### Core Components
 
 #### 1. RAG Pipeline for Music Generation
