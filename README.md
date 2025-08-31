@@ -1,6 +1,8 @@
 # Advanced MusicBlocks JavaScript Editor and MIDI Generation Tool
 
-This is a comprehensive summary of my work on the **Advanced JavaScript Editor with MusicBlocks Interactions** project during *Google Summer of Code 2025* with [Sugar Labs](https://github.com/sugarlabs/). This project focused on enhancing the JavaScript editor within the MusicBlocks environment to provide a seamless bridge between visual block-based programming and textual JavaScript coding. I also completed an additional project, an end-to-end pipeline for generating music from natural language prompts. All of the code included above (both projects) was merged into upstream.
+This is a comprehensive summary of my work on the **Advanced JavaScript Editor with MusicBlocks Interactions** project during *Google Summer of Code 2025* with [Sugar Labs](https://github.com/sugarlabs/). This project focused on enhancing the JavaScript editor within the MusicBlocks environment to provide a seamless bridge between visual block-based programming and textual JavaScript coding. I also completed an additional project, an end-to-end pipeline for generating music from natural language prompts. All of the code included above (both projects) was merged into upstream. My blogs for the summer can be found here for more specific technical details:
+
+https://www.sugarlabs.org/authors/elwin-li
 
 ## Abstract
 
